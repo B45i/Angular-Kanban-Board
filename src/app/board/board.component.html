@@ -7,9 +7,7 @@
     (cdkDropListDropped)="drop($event)"
     class="list"
   >
-    <mat-card class="item item-todo" *ngFor="let item of todo" cdkDrag>
-      {{ item }}
-    </mat-card>
+    <app-task-item [list]="todo" type="todo"></app-task-item>
   </div>
 
   <div
@@ -20,9 +18,7 @@
     (cdkDropListDropped)="drop($event)"
     class="list"
   >
-    <mat-card class="item item-doing" *ngFor="let item of doing" cdkDrag>
-      {{ item }}
-    </mat-card>
+    <app-task-item [list]="doing" type="doing"></app-task-item>
   </div>
 
   <div
@@ -33,12 +29,10 @@
     (cdkDropListDropped)="drop($event)"
     class="list done"
   >
-    <mat-card class="item item-done" *ngFor="let item of done" cdkDrag>
-      {{ item }}
-    </mat-card>
+    <app-task-item [list]="done" type="done"></app-task-item>
   </div>
 </div>
 
 <button class="btn-add" mat-fab color="primary" (click)="onAddTask()">
-  <mat-icon >add</mat-icon>
+  <mat-icon>add</mat-icon>
 </button>

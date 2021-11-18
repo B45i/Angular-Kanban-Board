@@ -19,12 +19,14 @@ type Board = {
 })
 export class BoardComponent implements OnInit {
   data: Board = {
-    todo: [],
-    doing: [],
-    done: [],
+    todo: ['Get to work', 'Go home', 'Fall asleep'],
+    doing: ['Pick up groceries'],
+    done: ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'],
   };
   // update feature
   // delete feature
+  // title for lists
+  // empty list message
 
   get todo() {
     return this.data.todo;

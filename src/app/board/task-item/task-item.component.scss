@@ -1,0 +1,22 @@
+.item {
+    margin-bottom: 10px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    border-top-width: 3px;
+    border-top-style: solid;
+    &-todo {
+      border-top-color: #ff605c;
+    }
+  
+    &-doing {
+      border-top-color: #ffbd44;
+    }
+  
+    &-done {
+      border-top-color: #00ca4e;
+    }
+  }
+  

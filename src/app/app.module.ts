@@ -9,12 +9,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu'
 
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { BoardComponent } from './board/board.component';
 import { AddTaskComponent } from './board/add-task/add-task.component';
 import { FormsModule } from '@angular/forms';
+import { TaskItemComponent } from './board/task-item/task-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     ToolbarComponent,
     BoardComponent,
     AddTaskComponent,
+    TaskItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],
