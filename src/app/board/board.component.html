@@ -4,11 +4,10 @@
     #todoList="cdkDropList"
     [cdkDropListData]="todo"
     [cdkDropListConnectedTo]="[doneList, doingList]"
-    class="example-list"
     (cdkDropListDropped)="drop($event)"
-    class="todo-list"
+    class="list"
   >
-    <mat-card class="item" *ngFor="let item of todo" cdkDrag>{{
+    <mat-card class="item item-todo" *ngFor="let item of todo" cdkDrag>{{
       item
     }}</mat-card>
   </div>
@@ -18,11 +17,10 @@
     #doingList="cdkDropList"
     [cdkDropListData]="doing"
     [cdkDropListConnectedTo]="[todoList, doneList]"
-    class="example-list"
     (cdkDropListDropped)="drop($event)"
-    class="todo-list"
+    class="list"
   >
-    <mat-card class="item" *ngFor="let item of doing" cdkDrag>{{
+    <mat-card class="item item-doing" *ngFor="let item of doing" cdkDrag>{{
       item
     }}</mat-card>
   </div>
@@ -32,11 +30,10 @@
     #doneList="cdkDropList"
     [cdkDropListData]="done"
     [cdkDropListConnectedTo]="[todoList, doingList]"
-    class="example-list"
     (cdkDropListDropped)="drop($event)"
-    class="todo-list"
+    class="list done"
   >
-    <mat-card class="item" *ngFor="let item of done" cdkDrag>{{
+    <mat-card class="item item-done" *ngFor="let item of done" cdkDrag>{{
       item
     }}</mat-card>
   </div>
