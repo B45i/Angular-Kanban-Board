@@ -4,6 +4,8 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 type Board = {
   todo: Array<string>;
@@ -16,7 +18,13 @@ type Board = {
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit {
-  data: Board;
+  data: Board = {
+    todo: [],
+    doing: [],
+    done: [],
+  };
+  // update feature
+  // delete feature
 
   get todo() {
     return this.data.todo;
@@ -29,11 +37,24 @@ export class BoardComponent implements OnInit {
   get done() {
     return this.data.done;
   }
-  constructor() {
+
+  constructor(public dialog: MatDialog) {}
+
+  ngOnInit(): void {
     this.data = JSON.parse(localStorage.getItem('data') || '');
   }
 
-  ngOnInit(): void {}
+  onAddTask() {
+    const dialogRef = this.dialog.open(AddTaskComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.todo.push(result)
+      }
+    });
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

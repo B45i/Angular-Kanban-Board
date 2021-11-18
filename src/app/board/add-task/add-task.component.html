@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>
+  {{ isNew ? "Add Task" : "Update Task" }}
+</h1>
+
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" [style.width]="'100%'">
+    <mat-label>Task</mat-label>
+    <input matInput [(ngModel)]="task" cdkFocusInitial />
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onAdd()" [disabled]="!task">
+    {{ isNew ? "Add" : "Update" }}
+  </button>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-button></button>
+</div>
